@@ -1,0 +1,16 @@
+:root { color-scheme: dark; background: #020408; }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+body { background: #020408; }
+#universe { position: relative; width: 100%; height: 100%; height: 100svh; overflow: hidden; isolation: isolate; }
+#still { position: absolute; inset: 0; background: #020408 url('./assets/earth-poster.png') center / auto min(100vw, 100svh) no-repeat; }
+#space { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 0; transition: opacity 1.5s ease; }
+#space.ready { opacity: 1; }
+#space { touch-action: manipulation; }
+#space.shield-hover { cursor: crosshair; }
+#space:focus { outline: none; }
+#space:focus-visible { outline: 1px solid #d1a75966; outline-offset: -5px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+#brand { position: absolute; z-index: 2; top: max(36px, env(safe-area-inset-top)); left: 50%; transform: translateX(-50%); }
+#brand img { display: block; max-width: min(200px, 45vw); max-height: 64px; }
+@media (prefers-reduced-motion: reduce) { #space { transition: none; } }

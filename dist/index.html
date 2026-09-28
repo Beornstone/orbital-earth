@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#020408" />
+    <meta name="description" content="Space and defense. A new perspective." />
+    <title>Space & Defense</title>
+    <!-- Earth imagery: NASA Earth Observatory. Blue Marble by Reto Stockli;
+         Black Marble by Joshua Stevens using Suomi NPP VIIRS data.
+         Full credits and original sources accompany the project in ASSET-SOURCES.md. -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23020408'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%230d2843' stroke='%235cafed'/%3E%3Cellipse cx='16' cy='16' rx='14' ry='5' transform='rotate(-35 16 16)' fill='none' stroke='%2370c8ff' stroke-width='1'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preload" href="./assets/earth-night.jpg" as="image" />
+    <link rel="preload" href="./assets/earth-day.jpg" as="image" />
+    <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+    <script type="module" src="./scene.js"></script>
+  </head>
+  <body>
+    <main id="universe" aria-label="A rotating Earth with a moving day and night boundary, golden night-side city lights, and 17 blue satellites, 48 red hostile satellites, and an interactive gold orbital shield.">
+      <div id="still" aria-hidden="true"></div>
+      <canvas id="space" tabindex="0" role="application" aria-label="Interactive Earth orbital shield" aria-describedby="shield-help shield-status" aria-keyshortcuts="Enter R Space"></canvas>
+      <p id="shield-help" class="sr-only">Click or tap Earth to add a gold satellite on a polar, equatorial, or crossed diagonal orbit. Each gold satellite carries a broad honeycomb shield centered on it as it orbits. Red satellites flash and disappear on contact with a moving shield. Enter deploys near the center. R resets the shield and restores the red satellites. Space pauses or resumes motion.</p>
+      <output id="shield-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true">0 gold satellites with orbiting mesh shields deployed.</output>
+      <!-- The supplied company logo will be placed here when it is available. -->
+      <div id="brand" hidden></div>
+    </main>
+  </body>
+</html>
